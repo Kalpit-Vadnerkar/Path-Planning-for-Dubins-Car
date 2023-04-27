@@ -6,7 +6,7 @@ Created on Mon Apr 24 09:51:51 2023
 """
 
 import numpy as np
-from math import sin, atan2, atan
+from math import sin, atan2, atan, inf
 
 from dpp.methods.dubins_path import DubinsPath
 from dpp.utils.utils import distance
@@ -105,9 +105,11 @@ class RRTStar:
 
         nodes = [self.start]
         final_node = None
+        
+        valid_dubins_paths = [] # (final_node, dubis_route, cost)
 
         count = 0
-        while True:
+        while count < 1500:
             count += 1
 
             if count % self.pick_target == 0:
@@ -122,8 +124,10 @@ class RRTStar:
                 dubins_route, cost, valid = self.dubins.best_tangent(solutions)
 
                 if valid:
-                    final_node = nearest
-                    break
+                    valid_dubins_paths.append((nearest, dubins_route, cost))
+                    #final_node = nearest
+                    #break
+                    continue
 
             phi = self.get_steering_angle(nearest.pos, pick)
             pos = nearest.pos
@@ -155,9 +159,17 @@ class RRTStar:
 
             self.rewire(nodes, new_node)
 
-        route = self.backtracking(final_node) + dubins_route
+        min_cost = inf
+        index = 0
+        for i in range(len(valid_dubins_paths)):
+            if valid_dubins_paths[i][2] < min_cost:
+                min_cost = valid_dubins_paths[i][2]
+                index = i
+        route = self.backtracking(valid_dubins_paths[index][0]) + valid_dubins_paths[index][1]
+        #route = self.backtracking(final_node) + dubins_route
         path = self.car.get_path(self.car.start_pos, route)
         print('Total iteration:', count)
+        print("Total paths found = ", len(valid_dubins_paths))
 
         return path, nodes
 

@@ -16,7 +16,7 @@ from dpp.utils.utils import distance
 class RRTExploration(RRT):
     """ RRT algorithm for complete map exploration. """
 
-    def __init__(self, car, max_steps=50, pick_target=10, check_dubins=1, max_iterations=1000):
+    def __init__(self, car, max_steps=50, pick_target=10, check_dubins=1, max_iterations=100):
         super().__init__(car, max_steps, pick_target, check_dubins)
         self.max_iterations = max_iterations
 

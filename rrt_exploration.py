@@ -27,7 +27,7 @@ def main():
 
     car = SimpleCar(env, tc.start_pos, tc.end_pos)
 
-    rrt_exploration = RRTExploration(car, max_steps=50, pick_target=10, check_dubins=1, max_iterations=1500)
+    rrt_exploration = RRTExploration(car, max_steps=50, pick_target=10, check_dubins=1, max_iterations=500)
 
     t = time()
 
