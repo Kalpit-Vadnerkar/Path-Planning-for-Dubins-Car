@@ -124,10 +124,10 @@ class RRTStar:
                 dubins_route, cost, valid = self.dubins.best_tangent(solutions)
 
                 if valid:
-                    valid_dubins_paths.append((nearest, dubins_route, cost))
-                    #final_node = nearest
-                    #break
-                    continue
+                    #valid_dubins_paths.append((nearest, dubins_route, cost))
+                    final_node = nearest
+                    break
+                    #continue
 
             phi = self.get_steering_angle(nearest.pos, pick)
             pos = nearest.pos
@@ -161,15 +161,15 @@ class RRTStar:
 
         min_cost = inf
         index = 0
-        for i in range(len(valid_dubins_paths)):
-            if valid_dubins_paths[i][2] < min_cost:
-                min_cost = valid_dubins_paths[i][2]
-                index = i
-        route = self.backtracking(valid_dubins_paths[index][0]) + valid_dubins_paths[index][1]
-        #route = self.backtracking(final_node) + dubins_route
+        #for i in range(len(valid_dubins_paths)):
+           # if valid_dubins_paths[i][2] < min_cost:
+            #    min_cost = valid_dubins_paths[i][2]
+            #    index = i
+        #route = self.backtracking(valid_dubins_paths[index][0]) + valid_dubins_paths[index][1]
+        route = self.backtracking(final_node) + dubins_route
         path = self.car.get_path(self.car.start_pos, route)
         print('Total iteration:', count)
-        print("Total paths found = ", len(valid_dubins_paths))
+        #print("Total paths found = ", len(valid_dubins_paths))
 
         return path, nodes
 
