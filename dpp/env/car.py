@@ -1,11 +1,12 @@
 from math import cos, sin, tan, degrees, pi
+import random
 from random import uniform
 from matplotlib.patches import Rectangle, Arrow
 from time import time
 
 from dpp.utils.utils import transform, same_point
 
-
+random.seed(6)
 class State:
 
     def __init__(self, pos, model):
