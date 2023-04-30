@@ -1,4 +1,4 @@
-A simple implementation car path planning with RRT, RRT*, and Hybrid A* algorithms for Dubins car in a 2D environment with obstacles. 
+A simple implementation of RRT, RRT*, and Hybrid A* path planning algorithms for Dubins car in a 2D environment with obstacles. 
 
 ## Usage
 
