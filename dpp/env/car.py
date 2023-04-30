@@ -6,7 +6,7 @@ from time import time
 
 from dpp.utils.utils import transform, same_point
 
-random.seed(6)
+
 class State:
 
     def __init__(self, pos, model):
