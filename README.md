@@ -17,4 +17,7 @@ $ python rrt_exploration.py
 # pathfinding with Hybrid A* + Dubins Path
 $ python hybrid_astar.py
 
+## Changing the Map
+The project uses cases.py in the "Path-Planning-for-Dubins-Car\dpp\test_cases" folder. Rename the files to "cases.py" to use a different map.
+
 
