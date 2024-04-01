@@ -10,7 +10,7 @@ Dubins car is a type of vehicle used in motion planning that is constrained to m
 
 ## Comparison between RRT and RRT* exploration
 
-![alt text](https://github.com/Kalpit-Vadnerkar/Path-Planning-for-Dubins-Car/blob/master/RRT.png?raw=true)![alt text](https://github.com/Kalpit-Vadnerkar/Path-Planning-for-Dubins-Car/blob/master/RRT_Star.png?raw=true)
+![alt text](https://github.com/Kalpit-Vadnerkar/Path-Planning-for-Dubins-Car/blob/master/RRT.png?raw=true)     ![alt text](https://github.com/Kalpit-Vadnerkar/Path-Planning-for-Dubins-Car/blob/master/RRT_Star.png?raw=true)
 
 ## Usage
 
