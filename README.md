@@ -14,22 +14,22 @@ Dubins car is a type of vehicle used in motion planning that is constrained to m
 
 ## Usage
 
-# pathfinding with RRT* + Dubins Path
+### pathfinding with RRT* + Dubins Path
 $ python rrt_star.py
 
-# Map exploration for Dubins car using RRT* algorithm
+### Map exploration for Dubins car using RRT* algorithm
 $ python rrt_star_exploration.py
 
-# pathfinding with RRT + Dubins Path
+### pathfinding with RRT + Dubins Path
 $ python rrt.py
 
-# Map exploration for Dubins car using RRT algorithm
+### Map exploration for Dubins car using RRT algorithm
 $ python rrt_exploration.py
 
-# pathfinding with Hybrid A* + Dubins Path
+### pathfinding with Hybrid A* + Dubins Path
 $ python hybrid_astar.py
 
-## Changing the Map
+### Changing the Map
 The project uses cases.py in the "Path-Planning-for-Dubins-Car\dpp\test_cases" folder. Rename the files to "cases.py" to use a different map.
 
 ## Conclusion
